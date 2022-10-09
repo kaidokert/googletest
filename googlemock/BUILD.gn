@@ -1,0 +1,14 @@
+static_library("googlemock") {
+  testonly = true
+
+  if (!defined(public_configs)) {
+    public_configs = []
+  }
+
+  public_configs +=
+      [ "//third_party/googletest/googlemock:googlemock_include_config" ]
+}
+
+config("googlemock_include_config") {
+  include_dirs = [ "include" ]
+}

@@ -1,0 +1,13 @@
+static_library("googletest") {
+  testonly = true
+  if (!defined(public_configs)) {
+    public_configs = []
+  }
+
+  public_configs +=
+      [ "//third_party/googletest/googletest:googletest_include_config" ]
+}
+
+config("googletest_include_config") {
+  include_dirs = [ "include" ]
+}
